@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <iostream>
 #include <vector>
+#include <unordered_map>
 
 using namespace std;
     vector<int> twoSum(vector<int>& nums, int target);
@@ -48,3 +49,5 @@ int main(){
         }
         return result;
     }
+
+    // HASH MAP IMPLEMENTATION: 
