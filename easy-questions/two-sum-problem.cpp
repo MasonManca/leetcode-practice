@@ -51,3 +51,24 @@ int main(){
     }
 
     // HASH MAP IMPLEMENTATION: 
+    vector<int> twoSum(vector<int>& nums, int target) {
+        unordered_map<int, int> hashmap;
+
+        for (int i = 0; i < nums.size(); i++) {
+            int complement = target - nums[i];
+
+            // count(const k): searches for elements whose key is k, 
+            // returns number of elements.
+
+            if (hashmap.count(complement)) { // if value exists in hashmap, true
+                return {hashmap[complement], i};
+                // returns target index and current vector index
+            }
+            hashmap[nums[i]] = i; 
+            // If the complement is not found in the hashmap, 
+            // we insert the current element nums[i] into the hashmap along with 
+            // its index i using hashmap[nums[i]] = i.
+        }
+
+        return {}; // Return an empty vector if no solution is found
+    }
